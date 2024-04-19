@@ -1,0 +1,284 @@
+.header{
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.reuse-section{
+    width: 100%;
+    padding: 0 clamp(1%, 5vw, 10%);
+    margin: 4rem auto;
+    box-sizing: border-box; 
+}
+
+.reuse-section .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 2rem 0;
+    h1{
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        margin: 0;
+    }
+}
+
+.location-hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 0 clamp(1%, 5vw, 10%);
+    margin: 4rem auto;
+}
+
+.location-hero .left{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    h1{
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        margin: 0 0 1rem 0;
+    }
+}
+
+.location-hero .left .bottom{
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 0 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgb(255,255,255);
+    label{
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+    }
+    input{
+        width: 100%;
+        margin: 0;
+        font-size: clamp(1rem, 2vw, 1rem);
+        font-weight: 600;
+        box-sizing: border-box;
+        padding: 0.8rem;
+        margin: 0 0 clamp(1rem, 4vw, 2rem) 0;
+        border-radius: 0.5rem;
+        border: 0.1rem solid rgba(0, 0, 0, 0.2);
+        outline: none;
+        background-color: rgb(255, 255, 255);
+        transition: background-color 0.3s ease-in-out;
+    }
+    input:active, input:focus{
+        background-color: rgb(255, 251, 246);
+    }
+    button{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        font-weight: 600;
+        padding: 0.6rem;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 0.5rem;
+        background-color: var(--orange-color);
+        color: white;
+        svg{
+            width: clamp(1rem, 2vw, 1.2rem);
+            height: clamp(1rem, 2vw, 1.2rem);
+            margin: 0 0.5rem 0 0;
+        }
+    }
+}
+
+.location-hero .right{
+    width: 100%;
+    height: 30rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.6);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.location .container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.location-card{
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    animation: showLocationCard 0.5s ease-in-out forwards;
+    transform: translateY(3rem);
+    opacity: 0;
+    cursor: pointer;
+    color: var(--black-color-text);
+}   
+
+@keyframes showLocationCard{ 
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.location-card-img{
+    width: 100%;
+    height: 18rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.location-card-img::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0.8rem, 4vw, 1.3rem);
+    font-weight: 600;
+    color: var(--orange-color);
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 1rem;
+    transform: scale(1);
+}
+
+.location-card:hover .location-card-img::after{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.location-card-img::before{
+    content: "";
+    border: 1rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: scale(1);
+    border-radius: 0.5rem;
+    border: 0.15rem solid var(--orange-color);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.location-card:hover .location-card-img::before{
+    opacity: 1;
+    transform: scale(0.8);
+}
+
+.location-card-content{
+    text-align: center;
+}
+.location-card-content h3{
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    margin: 1rem 0 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-margin{
+        display: none;
+    }
+    .location-hero{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+        margin: 0;
+    }
+    .location-hero .left{
+        order: 1;
+        padding: 0 clamp(1%, 5vw, 10%);
+    } 
+    .location-hero .right{
+        order: 0;
+        border-radius: 0;
+        height: clamp(15rem, 15vw, 20rem);
+    }
+    .location .container{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }  
+}
+
+@media only screen and (min-width: 600px) {
+    .header-margin{
+        display: none;
+    }
+    .location-hero{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+        margin: 0;
+    }
+    .location-hero .left{
+        order: 1;
+        padding: 0 clamp(1%, 5vw, 10%);
+    } 
+    .location-hero .right{
+        order: 0;
+        border-radius: 0;
+    }
+    .location .container{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }  
+}
+
+@media only screen and (min-width: 768px) {
+    .location .container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }  
+}
+
+@media only screen and (min-width: 992px) {
+    .header-margin{
+        display: block;
+    }
+    .location-hero{
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 0 clamp(1%, 5vw, 10%);
+        margin: 4rem auto;
+    }
+    .location-hero .left{
+        order: 0;
+        padding: 0;
+    } 
+    .location-hero .right{
+        order: 1;
+        border-radius: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .location-hero{
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    .location .container{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}

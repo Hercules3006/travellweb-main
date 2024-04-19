@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/signup.css"/>
+  <link rel="stylesheet" href="./css/notification.css"/>
+</head>
+
+<body>
+  <!-- from login -->
+  <div class="background"> 
+    <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?cs=srgb&dl=pexels-stephan-seeber-1054218.jpg&fm=jpg" alt="logo" />
+  </div>
+  <div class="left">
+    <h1 onclick="window.location.href='index.html'"> Travel </h1>
+    <div>
+      <p> Already user?</p>
+      <button onclick="window.location.href='login.html'"> Sign in </button>
+    </div>
+  </div>
+  <div class="right">
+    <div class="signup-container">
+      <h1> Sign up </h1>
+      <div class="form">
+        <div>
+          <label for="name"> Name </label>
+          <input type="text" name="name" id="name"/>
+        </div>
+        <div>
+          <label for="email"> Email </label>
+          <input type="text" name="email" id="email"/>
+        </div>
+        <div> 
+          <label for="password"> Password </label>
+          <input type="password" name="password" id="password"/>
+        </div>
+        <div> 
+          <label for="comfirm-password"> Comfirm Password </label>
+          <input type="password" name="comfirm-password" id="comfirm-password"/>
+        </div>
+        <button onclick="signUp()"> Sign up </button>
+      </div>
+    </div>
+    <div class="verify-email">
+      <button class="btn-back" onclick="showSignin()"> <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg> Sign up </button>
+      <h1> Verify your email </h1>
+      <p> We have sent a OTP to your email address <br> Please enter the code to verify email </p>
+      <div class="otp-container">
+        <div class="border" onclick="focusInput(0)"><input type="text" name="OTP" maxlength="1" onkeydown="handleInputOtp(event, 0)"></div>
+        <div class="border" onclick="focusInput(1)"><input type="text" name="OTP" maxlength="1" onkeydown="handleInputOtp(event, 1)"></div>
+        <div class="border" onclick="focusInput(2)"><input type="text" name="OTP" maxlength="1" onkeydown="handleInputOtp(event, 2)"></div>
+        <div class="border" onclick="focusInput(3)"><input type="text" name="OTP" maxlength="1" onkeydown="handleInputOtp(event, 3)"></div>
+        <div class="border" onclick="focusInput(4)"><input type="text" name="OTP" maxlength="1" onkeydown="handleInputOtp(event, 4)"></div>
+        <div class="border" onclick="focusInput(5)"><input type="text" name="OTP" maxlength="1" onkeydown="handleInputOtp(event, 5)"></div>
+      </div>
+      <div class="time-remain"> </div>
+      <button class="resend-otp" onclick="resendOtp()"> Resend OTP </button>
+      <button class="btn-verify active" onclick="verifyEmail()"> Verify </button>
+    </div>
+  </div>
+  <script src="./js/notification.js"></script>
+  <script src="./js/reuseScript.js"></script>
+  <script src="./js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/login.css"/>
+  <link rel="stylesheet" href="./css/notification.css"/>
+</head>
+
+<body>
+  <!-- from login -->
+  <div class="background"> 
+    <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?cs=srgb&dl=pexels-stephan-seeber-1054218.jpg&fm=jpg" alt="logo" />
+  </div>
+  <div class="left">
+    <h1 onclick="window.location.href='index.html'"> Travel </h1>
+    <div>
+      <p> Don't have an account?</p>
+      <button onclick="window.location.href='signup.html'"> Sign up </button>
+    </div>
+  </div>
+  <div class="right">
+    <div class="login__container">
+        <h1> Sign in </h1>
+        <div class="form">
+          <div>
+            <label for="email"> Email </label>
+            <input type="text" name="email" class="input-email"/>
+          </div>
+          <div> 
+            <label for="password"> Mật khẩu </label>
+            <input type="password" name="password" class="input-password"/>
+          </div>
+          <button onclick="login()"> Đăng Nhập </button>
+        </div>
+    </div>
+  </div>
+  <script src="./js/notification.js"></script>
+  <script src="./js/reuseScript.js"></script>
+  <script src="./js/login.js"></script>
+</body>
+</html>

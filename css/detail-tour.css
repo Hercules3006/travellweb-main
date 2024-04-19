@@ -1,0 +1,142 @@
+.detail-tour .section-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.detailContainer {
+    width: 50vw;
+    height: max-content;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 1rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-top {
+    position: relative;
+    height: 25rem;
+}
+
+.card-top::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(hsla(222, 46%, 17%, 0), hsla(222, 46%, 17%, 0.7));
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1;
+    color: white;
+}
+
+.card-subtitle {
+    color: var(--mikado-yellow);
+    font-size: var(--fs-5);
+    margin: 0 0 0.5rem 0;
+}
+
+.card-title {
+    color: var(--white-1);
+    margin: 0;
+}
+
+.card-time {
+    width: 5rem;
+    height: 4rem;
+    background-color: rgb(255, 217, 0);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    position: absolute;
+    z-index: 3;
+}
+
+.card-time svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.card-time p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card {
+    width: 20rem;
+    height: 30rem;
+}
+
+.card-banner {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.card-banner img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-bottom {
+    margin: 1rem;
+    height: 2rem;
+}
+
+.card-price {
+    width: fit-content;
+    display: inline-block;
+    align-items: center;
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    color: white;
+    background-color: rgb(0, 193, 145);
+}
+
+.card-rate {
+    width: fit-content;
+    display: inline-block;
+    align-items: center;
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    color: white;
+    background-color: rgb(255, 217, 0);
+}
+
+.card-description {
+    margin: 1rem;
+}
+
+.card-description button {
+    width: fit-content;
+    display: inline-block;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.2rem;
+    color: white;
+    background-color: rgb(0, 193, 145);
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.card-description button:hover {
+    cursor: pointer;
+}
